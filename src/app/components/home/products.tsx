@@ -84,44 +84,15 @@ const Products: React.FC = () => {
           </ul>
           <div className="self-stretch mt-20 px-5 max-md:max-w-full max-md:mt-10">
             <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0 flex-wrap">
-                {products.map((product: ProductProps) => (
+                {products.map((product: ProductProps, index: number) => (
                     <Product
+                    key={index}
                     title={product.title}
                     price={product.price}
                     imageSrc={product.imageSrc}
                     imageAlt={product.imageAlt}
                   />
                 ))}
-              {/* <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 1"
-              />
-              <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 2"
-              />
-              <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 3"
-              />
-              <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/cc0bc876-aacb-41a1-b296-43bcf8ce275c?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 1"
-              />
-              <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/5d3be6e9-e73b-4d92-9a34-3270769d51be?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 2"
-              />
-              <Product
-                title="Chaise Molle"
-                price="$18.00"
-                imageSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e3464866-6c00-4f0a-b157-5874cec1c9f2?apiKey=8747f99d6964435eb0741236b489b06f&"imageAlt="Product 3"
-              /> */}
             </div>
           </div>
         </div>
